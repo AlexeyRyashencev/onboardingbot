@@ -1,0 +1,29 @@
+{
+  "name": "onboardingbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon --exec babel-node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexeyRyashencev/onboardingbot.git"
+  },
+  "author": "a.ryashentsev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexeyRyashencev/onboardingbot/issues"
+  },
+  "homepage": "https://github.com/AlexeyRyashencev/onboardingbot#readme",
+  "dependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/node": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "@slack/bolt": "^3.8.1"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.15"
+  }
+}
