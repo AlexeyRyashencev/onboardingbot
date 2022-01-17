@@ -1,4 +1,6 @@
-export const getInviteReplica = () =>
+import { onboardingUsersConfig } from '../configs/onboarding-users';
+
+export const getInviteReplica = (userId) =>
     ({
         text: 'Чеклист',
         blocks: [
@@ -6,33 +8,53 @@ export const getInviteReplica = () =>
                 'type': 'section',
                 'text': {
                     'type': 'mrkdwn',
-                    'text': 'Вот твой чеклист :white_check_mark::'
+                    'text': ':spiral_note_pad:Вот твой чеклист :'
                 }
-            },
-            {
-                'type': 'divider',
             },
             {
                 'type': 'section',
                 'text': {
                     'type': 'mrkdwn',
                     'text': ':one: Настройка рабочего окружения:\n' +
-                        '• <http://confluence.moscow.alfaintra.net/pages/viewpage.action?pageId=293550541|Заявка на wifi>\n' +
-                        '• <http://confluence.moscow.alfaintra.net/pages/viewpage.action?pageId=51351685|Заявка на VPN (3 штуки)>'
+                        '• *06.47* Первичные доступы для нового сотрудника ЦК JavaScript\n' +
+                        '(06 нет в списке. чтобы найти заявку надо вбить в поиск слово javascript и нажать кнопку найти (не нажимать энтер))\n' +
+                        '• *02.05.26.01* Удаленный доступ к системам банка через VPN (2 отдельные заявки):\n' +
+                        'Тип проводимых работ: подключить\n' +
+                        'Тип ос: обычно macOS, но стоит уточнить\n' +
+                        'Создать новый сертификат VPN?: в одной заявке ставим "да", в другой "нет"\n' +
+                        'Доступ к ресурсам: в одной заявке ставим "общебанковские приложения", в другой "разработческие среды"\n' +
+                        '`ВАЖНО`: Новый сертификат "заказываем", если ноутбук будет на руках в течение 10-15 часов или уже есть, так как сертификат быстро протухает.\n'+
+                        '• *02.05.30* на доступ к проекту>\n' +
+                        'Доступ к Bitbucket: предоставить\n' +
+                        'Проекты Bitbucket: нужен доступ к проектам\n' +
+                        'Выбирать проект и соответствующую группу [КЛЮЧ_ПРОЕКТА]-developers'
                 }
             },
             {
                 'type': 'section',
                 'text': {
                     'type': 'mrkdwn',
-                    'text': ':two: Цели на испытательный срок:\n'
+                    'text': ':two: Цели на испытательный срок:\n' +
+                        '• Научиться использовать принятые в направлении решения\n' +
+                        '• Научиться производить поставки на среды, анализировать возникающие трудности и уметь решать их или знать к кому можно обратиться\n' +
+                        '• Научиться командным взаимодействиям, принятым в банке'
                 }
             },
             {
                 'type': 'section',
                 'text': {
                     'type': 'mrkdwn',
-                    'text': ':three: Третий пункт:\n'
+                    'text': ':three: Курсы: пройти тестирование на портале *<http://alfa/ | alfa>*\n'
+                }
+            },
+            {
+                'type': 'divider'
+            },
+            {
+                'type': 'section',
+                'text': {
+                    'type': 'mrkdwn',
+                    'text': `:teacher:Наставник: <@${onboardingUsersConfig[userId]?.curator}>\nКоманда: <#${onboardingUsersConfig[userId]?.team.channelId}>`
                 }
             },
             {
